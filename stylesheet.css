@@ -1,0 +1,75 @@
+body {
+width:300px;
+}
+
+
+
+/* visited link */
+a:visited {
+    color: rgb(128, 0, 85);
+}
+
+header h4 {
+    width:300px
+    
+}
+
+
+header h1 {
+    font-size:48px;
+	color:black;
+    font-family: cursive;
+
+
+    padding-left: 2px;
+    padding-top: 0px;
+    
+}
+
+body header div {
+    color:white;
+    font-family: 'Yatra One', cursive;
+    letter-spacing: .4em;
+    padding-left: 6px;
+    width: 294px;
+    background-color: black;
+}
+
+article h1 {
+    font-family:'Rokkitt',serif;
+}
+
+nav {
+    color: red;
+      
+    color:tomato;
+    font-family: 'Mogra', cursive;
+    letter-spacing: .125em;
+    width: 200px; 
+    position: fixed; 
+    z-index: 0;
+    right: 0; 
+    top: 0; 
+    height: 0;
+
+
+}
+
+section {
+
+}
+
+canvas {
+
+
+}
+
+h1 {
+
+
+}
+
+section {
+
+}
+
