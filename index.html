@@ -1,9 +1,107 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<title> ben bradshaw </title>
+		<link type= "text/css" rel = "stylesheet" href="stylesheet.css"/>
+	<title> benjamin bradshaw </title>
+<!--fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Mogra|Yatra+One" rel="stylesheet">	
+		<link href="https://fonts.googleapis.com/css?family=Fruktur" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+
+<!--wiggle.bones animation-->
+		<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+		<script src="wiggyone.js"></script>
+		<script>
+		var canvas, stage, exportRoot;
+		function init() {
+			// --- write your JS code here ---
+			
+			canvas = document.getElementById("canvas");
+			images = images||{};
+		
+			var loader = new createjs.LoadQueue(false);
+			loader.addEventListener("fileload", handleFileLoad);
+			loader.addEventListener("complete", handleComplete);
+			loader.loadManifest(lib.properties.manifest);
+		}
+		
+		function handleFileLoad(evt) {
+			if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+		}
+		
+		function handleComplete(evt) {
+			exportRoot = new lib.wiggyone();
+		
+			stage = new createjs.Stage(canvas);
+			stage.addChild(exportRoot);
+			stage.update();
+		
+			createjs.Ticker.setFPS(lib.properties.fps);
+			createjs.Ticker.addEventListener("tick", stage);
+		}
+		</script>
 	</head>
-	<body>
+<!-- - - - - - - - - BODY - - - - - - - - -->
+	<body onload="init();">
+		<header>
+			<h4>/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /<br> “Everything — from biological life to inanimate systems — generate shape and structure and evolves in a sequence of ever-improving designs in order to facilitate flow. <br>/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /<br> River basins, cardiovascular systems, and bolts of lightning are very efficient flow systems to move a current — of water, blood, or electricity. <br>/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /<br> Likewise, the more complex architecture of animals evolves to cover greater distance per unit of useful energy, or increase their flow across land. <br>/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /<br> Such designs also appear in human organizations, like the hierarchical ‘flowcharts’ or reporting structures in corporations and political bodies.” <br>/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /<br><br>  &gt; &gt; &gt; Adrian Bejan - <em> Design in Nature. </em> </h4>
+
+			<!--h1>I'M GUESSING THIS <br> MUST BE THE PLACE</h1-->
+			
+			<div>
+				BENJAMIN BRADSHAW
+			</div>
+
+<!--  navigation window -->
+			<nav>
+				<ul>
+				<a href="#clay">ceramics</a><br>
+				<a href="#dog">dog</a><br>
+				<a href="#draw">drawings</a><br>
+				<a href="#animation">animation</a><br>
+				<a href="#plaster">plaster</a><br>
+				</ul>
+			</nav>
+		</header>
+
+<!--  animation window -->
+<canvas id="canvas" width="300" height="450" style="background-color:#FFFFFF"></canvas>
+
+		<main>
+			<article>
+				<section>
+				<a name="clay">
+						<h1> I am a sculptor who works in clay </h1>
+						<img src= images/ceramics.jpg alt="clay"  width="300"/>
+						<p>  my 'aesthetic' is atlantean cityscape and I like making small things. these teeny vases are only 4 inches tall.</p>
+				</section>
+				<section>
+				<a name="dog">
+						<h1> This my dog - her name is Kilo </h1>
+						<img src= images/dog.jpg alt="dog"  width="300"/>
+						<p> It's not a cocaine reference, I just like the metric system.</p>
+				</section>
+				<section>
+				<a name="draw">
+						<h1> What I really love to do is draw </h1>
+						<img src= images/drawnscape.jpg alt="draw"  width="300"/>
+						<p></p>
+				</section>
+				<section>
+					<a name="animation">
+						<h1> Still image from a particle simulation, <a href=https://vimeo.com/106011307>DYNAM</a>  </h1>
+						<img src= images/animate.png alt="draw"  width="300"/>
+						<p> Every piece I make is a simulation. be it a simulation of the physics of a clay body. the simulated balance of light and dark on a page, or your good ol' fashioned computer simulation. I use these tools to extend my mental math.  </p>
+				</section>
+				<section>
+						<a name="plaster">
+						<h1> Examining scale in negative space. </h1>
+						<img src= images/lndscape.jpg alt="plaster"  width="300"/>
+						<p></p>
+				</section>
+			</article>
+		</main>
 	</body>
 
 </html>
